@@ -37,6 +37,7 @@ li{
 
 img{
     width: 100%;
+    display: block;
 }
 
 h1,h2,h3,h4,p{
@@ -89,9 +90,15 @@ footer{
     background-size: contain;
 }
 
-/*HEADER NAVIGATION STYLING*/
+/*HEADER STYLING*/
 .logo{
     width: unset;
+}
+
+.cart-info{
+    display: inline-block;
+    text-align: right;
+    padding-right: 10px;
 }
 
 header nav ul{
@@ -116,13 +123,12 @@ header nav li:hover{
 
 .footerNav ul li{
     padding: 15px;
-    border-radius: 1em;
+    opacity: 0.7;
     transition: all 0.3s;
 }
 
 .footerNav ul li:hover{
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 1em;
+    opacity: 1;
 }
 
 
@@ -172,7 +178,7 @@ header nav li:hover{
 /*SMALL PRODUCT COMPONENT STYLING*/
 .product-small{
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px;
     text-transform: uppercase;
     text-align: center;
 }
@@ -180,8 +186,7 @@ header nav li:hover{
 
 /*PRODUCT COMPONENT STYLING*/
 .product{
-    width: var(--mobile-width);
-    margin: 0 auto;
+    width: 100%;
     padding-bottom: 10px;
     box-shadow: var(--default-shadow);
 }
@@ -221,4 +226,31 @@ header nav li:hover{
 /*DISPLAY OPTIONS*/
 .display-desktop{
     display: none;
+}
+
+@media only screen and (min-width : 800px){
+    .display-desktop{
+        display: block;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .product{
+        width: 30%;
+    }
+
+    .product + .product{
+        margin-top: 0;
+    }
+
+    .footerNav ul li{
+        padding: 5px;
+        border-radius: 1em;
+        transition: all 0.3s;
+    }
 }
