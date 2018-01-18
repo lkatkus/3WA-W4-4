@@ -1,9 +1,7 @@
-
-
-
 /*VARIABLES*/
 html{
     --mobile-width:80%;
+    --max-width:1100px;
     --default-shadow:0px 0px 20px 5px rgba(0,0,0,0.1);
 }
 
@@ -67,11 +65,13 @@ header{
 
 .wrapper{
     width: var(--mobile-width);
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
 .content{
     padding: 10px;
+    position: relative;
 }
 
 .content-title{
@@ -106,7 +106,7 @@ header nav ul{
 }
 
 header nav li{
-    padding: 15px 0 15px 0;
+    padding: 15px 15px 15px 15px;
     border-radius: 1em;
     transition: all 0.3s;
 }
@@ -114,6 +114,17 @@ header nav li{
 header nav li:hover{
     background-color: rgba(255,255,255,0.2);
     border-radius: 1em;
+}
+
+/*CART COMPONENTS*/
+.cart{
+    opacity: 0.5;
+    transition: all 0.2s;
+}
+
+.cart:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
 /*FOOTER NAVIGATION STYLING*/
@@ -125,10 +136,12 @@ header nav li:hover{
     padding: 15px;
     opacity: 0.7;
     transition: all 0.3s;
+    user-select: none;
 }
 
 .footerNav ul li:hover{
     opacity: 1;
+    cursor: pointer;
 }
 
 
@@ -143,6 +156,10 @@ header nav li:hover{
 
 .text-white{
     color: white;
+}
+
+.text-small{
+    font-size: 0.8em;
 }
 
 /*BACKGROUND COLORS*/
@@ -176,19 +193,36 @@ header nav li:hover{
 }
 
 /*SMALL PRODUCT COMPONENT STYLING*/
+.product-small-container:hover .product-small{
+    opacity: 0.5;
+    transition: all 0.2s;
+}
+
+.product-small.product-small-thumbnail:hover{
+    color:unset;
+    opacity: 1;
+    cursor: pointer;
+}
+
 .product-small{
     margin: 0 auto;
     padding: 20px;
     text-transform: uppercase;
     text-align: center;
+    z-index: 2;
 }
 
+.product-small img{
+    width: 60%;
+    margin: 0 auto;
+}
 
 /*PRODUCT COMPONENT STYLING*/
 .product{
     width: 100%;
     padding-bottom: 10px;
     box-shadow: var(--default-shadow);
+    cursor: pointer;
 }
 
 .product + .product{
@@ -212,15 +246,22 @@ header nav li:hover{
 /*SERVICES STYLING*/
 .services-features{
     padding: 20px;
-    opacity: 0.8;
+    user-select: none;
 }
 
 .services-features li{
     padding: 10px;
+    opacity: 0.7;
+    transition: all 0.2s;
 }
 
 .services-features i{
     display: block;
+}
+
+.services-features li:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
 /*DISPLAY OPTIONS*/
@@ -237,7 +278,10 @@ header nav li:hover{
         display: flex;
         flex-flow: row;
         justify-content: space-between;
-        align-items: flex-start;
+    }
+
+    .flex-container-middle{
+        align-items: center;
     }
 
     .product{
@@ -248,9 +292,29 @@ header nav li:hover{
         margin-top: 0;
     }
 
+    .product-small img{
+        width: 80%;
+    }
+
+    header nav ul{
+        padding: 10px;
+    }
+
     .footerNav ul li{
         padding: 5px;
         border-radius: 1em;
         transition: all 0.3s;
+    }
+
+    .content-title{
+        position: absolute;
+        top: 50px;
+        opacity: 0.8;
+        transition: all 0.2s;
+    }
+
+    .content-title:hover{
+        opacity: 1;
+        cursor: pointer;
     }
 }
