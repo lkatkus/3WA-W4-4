@@ -93,6 +93,7 @@ footer{
 /*HEADER STYLING*/
 .logo{
     width: unset;
+    margin: 0 auto;
 }
 
 .cart-info{
@@ -294,6 +295,10 @@ header nav li:hover{
 
     .product-small img{
         width: 80%;
+    }
+
+    .logo{
+        margin: unset;
     }
 
     header nav ul{
